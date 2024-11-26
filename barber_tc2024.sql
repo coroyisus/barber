@@ -138,3 +138,43 @@ INSERT INTO wishlist (id_usuario, id_producto) VALUES (1, 2);
 
 SELECT * FROM carrito;
 SELECT * FROM wishlist;
+
+ALTER TABLE compras ADD cantidad INT NOT NULL AFTER id_producto;
+
+UPDATE usuarios 
+SET password = '$2y$10$WzCr21s8l5i./tB08aZbHO2zml4R.U5OZ2U/0YO4y8nqvS7qSiOgi' 
+WHERE email = 'admin@example.com';
+
+UPDATE usuarios 
+SET password = 'NUEVO_HASH_GENERADO'
+WHERE email = 'admin@example.com';
+
+SELECT * FROM usuarios WHERE email = 'admin@example.com';
+
+SELECT password FROM usuarios WHERE email = 'admin@example.com';
+
+UPDATE usuarios 
+SET password = 'NUEVO_HASH_GENERADO'
+WHERE email = 'admin@example.com';
+
+ALTER TABLE productos ADD COLUMN imagen VARCHAR(255) AFTER precio;
+
+DESCRIBE productos;
+
+
+ALTER TABLE productos ADD COLUMN descripcion TEXT NOT NULL;
+ALTER TABLE productos ADD COLUMN imagen VARCHAR(255) NOT NULL;
+
+CREATE TABLE IF NOT EXISTS productos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(255) NOT NULL,
+    descripcion TEXT NOT NULL,
+    precio DECIMAL(10, 2) NOT NULL,
+    imagen VARCHAR(255) NOT NULL
+);
+
+ALTER TABLE productos ADD COLUMN imagen VARCHAR(255) NOT NULL;
+
+DESCRIBE productos;
+ALTER TABLE productos ADD COLUMN imagen VARCHAR(255) NOT NULL;
+
